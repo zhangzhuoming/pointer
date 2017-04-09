@@ -1,14 +1,17 @@
 #include <stdio.h>
 void main()
 {
-	extern exchange(int *p1, int *p2);
-	int a,b,*p1,*p2;
-	scanf("%d%d", &a, &b);
-	/*p1 = &a;
-	p2 = &b;*/
-	exchange(a, b);
-	printf("a=%d,b=%d\n", a,b);
-	/*printf("max=%d,min=%d\n", *p1, *p2);*/
-
+	int i, a[10], *p;
+	p = a;
+	for (i = 0; i < 10; i++)
+	{
+		scanf("%d", p++);
+	}
+	printf("\n");
+	for (i = 0; i < 10; i++)
+	{
+		p--;
+		printf("%d", *p);
+	}
 	system("pause");
 }
