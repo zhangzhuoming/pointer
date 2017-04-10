@@ -8,9 +8,25 @@ void main()
 	{
 		for (j = 0; j < 4; j++)
 		{
-			printf("%d", *(*(p + i) + j));
+			printf("%2d", *(*(p + i) + j));
 		}
 		printf("\n");
 	}
+	for (;;)
+	{
+		printf("input a a[?][?]:");
+		printf("a[");
+		i = getch();
+		if(i==27)
+			break;
+		printf("%c]", i);
+		printf("[");
+		j = getch();
+		if (j == 27)
+			break;
+		printf("%c]", j);
+		printf("number is %d\n", a[i - 48][j - 48]);
+	}
+	
 	system("pause");
 }
