@@ -1,13 +1,16 @@
 #include <stdio.h>
 void main()
 {
-	extern exchange(int str[], int *p);
-	int i,a[10] = {0,1,2,3,4,5,6,7,8,9}, *p;
+	int  i, j, a[3][4] = {0,1,2,3,4,5,6,7,8,9,10,11}, (*p)[4];
 	p = a;
-	exchange(a,p);
-	for (i = 0; i < 10; i++)
+
+	for (i = 0; i < 3; i++)
 	{
-		printf("%d", *(p++));
+		for (j = 0; j < 4; j++)
+		{
+			printf("%d", *(*(p + i) + j));
+		}
+		printf("\n");
 	}
 	system("pause");
 }
