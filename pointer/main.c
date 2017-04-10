@@ -25,7 +25,7 @@ void main()
 		if (j == 27)
 			break;
 		printf("%c]", j);
-		printf("number is %d\n", a[i - 48][j - 48]);
+		printf("number is %d\n",*(*( p+(i - 48))+(j - 48)));
 	}
 	
 	system("pause");
