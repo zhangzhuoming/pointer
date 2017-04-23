@@ -1,32 +1,57 @@
 #include <stdio.h>
 void main()
 {
-	int  i, j, a[3][4] = {0,1,2,3,4,5,6,7,8,9,10,11}, (*p)[4];
-	p = a;
+	int max(int, int);
+	int min(int, int);
+	int add(int, int);
+	void process(int, int, int(*fun)());
+	int a, b;
 
-	for (i = 0; i < 3; i++)
-	{
-		for (j = 0; j < 4; j++)
-		{
-			printf("%2d", *(*(p + i) + j));
-		}
-		printf("\n");
-	}
-	for (;;)
-	{
-		printf("input a a[?][?]:");
-		printf("a[");
-		i = getch();
-		if(i==27)
-			break;
-		printf("%c]", i);
-		printf("[");
-		j = getch();
-		if (j == 27)
-			break;
-		printf("%c]", j);
-		printf("number is %d\n",*(*( p+(i - 48))+(j - 48)));
-	}
-	
+	printf("enter a and b:\n");//调用max函数
+	scanf("%d %d", &a, &b);
+	printf("max=");
+	process(a, b, max);
+
+	printf("enter a and b:\n");//调用min函数
+	scanf("%d %d", &a, &b);
+	printf("min=");
+	process(a, b, min);
+
+	printf("enter a and b:\n");//调用add函数
+	scanf("%d %d", &a, &b);
+	printf("add=");
+	process(a, b, add);
+
 	system("pause");
+}
+int max(int a, int b)
+{
+	int max;
+	if (a > b)
+		max = a;
+	else
+		max = b;
+	return max;
+}
+
+int min(int a, int b)
+{
+	int min;
+	if (a < b)
+		min = a;
+	else
+		min = b;
+	return min;
+}
+
+int add(int a, int b)
+{
+	int add;
+	add = a + b;
+	return add;
+}
+
+void process(int a, int b, int(*fun)())
+{
+	printf("%d\n", (*fun)(a, b));
 }
