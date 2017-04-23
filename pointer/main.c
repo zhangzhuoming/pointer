@@ -7,19 +7,18 @@ void main()
 	void process(int, int, int(*fun)());
 	int a, b;
 
-	printf("enter a and b:\n");//调用max函数
+	printf("enter a and b:\n");
 	scanf("%d %d", &a, &b);
+	//调用max函数
 	printf("max=");
 	process(a, b, max);
 
-	printf("enter a and b:\n");//调用min函数
-	scanf("%d %d", &a, &b);
+	//调用min函数
 	printf("min=");
 	process(a, b, min);
 
-	printf("enter a and b:\n");//调用add函数
-	scanf("%d %d", &a, &b);
-	printf("add=");
+	//调用add函数
+	printf("sum=");
 	process(a, b, add);
 
 	system("pause");
